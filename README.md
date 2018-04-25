@@ -8,7 +8,7 @@ This repo is used to store dockerfiles.
 Run tinc in docker. All ports poped out
 
 #### [dnsmasq]
-Used to disttribute ip addresses to the secondary network interface
+Used to distribute ip addresses to the secondary network interface
 
 #### [nginx]
 Open http service on specified path
