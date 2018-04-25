@@ -1,0 +1,24 @@
+version: '2'
+services:
+  dnsmasq:
+    image: hub.infervision.com/public/dnsmasq
+    container_name: dnsmasq
+    restart: always
+    network_mode: "host"
+    extra_hosts:
+      - "mirrors.infervision.com:192.168.1.216"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /home/tx-ai-01/docker-dnsmasq/tftpd:/var/tftpd
+    environment:
+      - IP=192.168.3.1/24
+      - DEVICE=ens1
+      - BOOT=pxelinux.0
+  nginx:
+    image: hub.infervision.com/public/nginx
+    container_name: nginx
+    network_mode: "host"
+    restart: always
+    volumes:
+      - /home/tx-ai-01/docker-dnsmasq/tftpd:/var/tftpd

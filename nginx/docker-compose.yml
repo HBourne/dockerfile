@@ -1,0 +1,9 @@
+version: '2'
+services:
+  nginx:
+    image: hub.infervision.com/public/nginx
+    container_name: nginx
+    network_mode: "host"
+    restart: always
+    volumes:
+      - /home/tx-ai-01/docker-dnsmasq/tftpd:/var/tftpd
