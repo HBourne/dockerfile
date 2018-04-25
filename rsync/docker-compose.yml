@@ -1,0 +1,10 @@
+version: '2'
+services:
+  rsync:
+    image: hub.infervision.com/dev/rsync
+    container_name: rsync
+    network_mode: "host"
+    restart: always
+    volumes:
+      - /media/tx-ai-01/Data:/var/data
+    command: ["--daemon","--no-detach","--config=/etc/rsyncd.conf"]
