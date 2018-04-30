@@ -15,3 +15,9 @@ Open http service on specified path
 
 #### [rsync]
 Setup a rsync server and activates authenciation using account & password
+
+#### [influxdb]
+Run influx db in docker
+
+#### [grafana]
+Run grafana in docker
