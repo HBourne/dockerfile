@@ -1,0 +1,14 @@
+version: '2' 
+services:
+  squid:
+    image: sameersbn/squid:3.3.8-23 
+    container_name: squid
+    network_mode: "host"
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "3128:3128"
+    volumes:
+      - /root/compose/squid/squid.conf:/etc/squid3/squid.conf
+      - /srv/docker/squid/cache:/var/spool/squid3
