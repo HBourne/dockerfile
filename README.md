@@ -21,3 +21,6 @@ Run influxdb in docker
 
 #### [grafana]
 Run grafana in docker
+
+#### [squid]
+Run squid in docker. Authentication added.
