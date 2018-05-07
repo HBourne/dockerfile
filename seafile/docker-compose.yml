@@ -1,0 +1,15 @@
+version: '2'
+services:
+    seafile:
+        image: seafileltd/seafile:latest
+        container_name: seafile
+        restart: always
+        environment: 
+          - SEAFILE_ADMIN_EMAIL=instance@example.com
+          - SEAFILE_ADMIN_PASSWORD=password
+          - SEAFILE_SERVER_HOSTNAME=seafile.example.com
+        ports: 
+          - "80:80"
+          - "443:443"
+        volumes:
+          - /opt/seafile-data:/shared
